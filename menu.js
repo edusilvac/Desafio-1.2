@@ -1,5 +1,5 @@
 //Importar Menu
-import Paciente from './Layout/menu.js'
+import Paciente from './Layout/paciente.js'
 
 //Módulos PromptSync
 import PromptSync from 'prompt-sync';
