@@ -6,7 +6,7 @@ import PromptSync from 'prompt-sync';
 
 import readline from 'readline';
 
-const prompt = require('prompt-sync')({ sigint: true }); // Permite terminar o programa com CTRL-C
+//const prompt = require('prompt-sync')({ sigint: true }); // Permite terminar o programa com CTRL-C
 //let nome = prompt('Digite seu nome'); 
 
 class Menu {
