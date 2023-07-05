@@ -44,23 +44,98 @@ class Menu {
     });
   }
 
+    //Aqui estão as Opçãos do Primeiro Caso
   cadastrarPaciente() {
     console.log('--- Cadastro de Pacientes ---');
-    this.agenda.adicionarPaciente(() => {
-      console.log('Paciente cadastrado com sucesso.');
-      this.exibir();
+    console.log('1 - Cadastrar novo Paciente');
+    console.log('2 - Excluir Paciente');
+    console.log('3 - Listar Pacientes (Ordenado por CPF)');
+    console.log('4 - LIstar Pacientes (Ordenado por Nome)');
+    console.log('5 - Voltar p/ menu principal');
+
+    this.rl.question('Digite a opção desejada: ', (opcao) => {
+      switch (opcao){
+        case '1':
+          // Lógica para cadastrar novo Cliente
+          console.log('Cadastrar Novo Paciente');
+          this.exibir();
+          break;
+        case '2':
+          // Lógica para Excluir um Paciente
+          console.log('Excluir Paciente');
+          this.exibir();
+          break;
+        case '3':
+          // Lógica para Listar Pacientes (Ordenado por CPF)
+          console.log('Listar Pacientes (Ordenado por CPF');
+          this.exibir();
+          break;
+          //Lógica para Listar Pacientes (Ordenado por Nome)
+        case '4':
+          console.log('Listar Pacientes (Ordenado por Nome');
+          this.exibir();
+          break;
+        case '5':
+          // Lógica para Voltar p/ menu Principal
+          console.log('Voltar p/ Menu Principal');
+          this.exibir();
+          break;
+          
+          default:
+            console.log('Opção Inválida. Digite uma Opção Válida');
+            this.cadastrarPaciente();
+            break;
+      }
     });
   }
 
+  //Aqui estão as Opçãos do Segundo Caso
   exibirAgenda() {
     console.log('--- Agenda ---');
-    this.agenda.exibir();
-    this.exibir();
+    console.log('1 - Agendar Consulta');
+    console.log('2 - Cancelar Agendamento');
+    console.log('3 - Listar Agenda');
+    console.log('4 - Voltar p/ Menu Principal');
+
+    this.rl.question('Digite a opção desejada: ', (opcao) => {
+      switch (opcao){
+        case '1':
+        // Lógica para Agendar Consulta
+        console.log('Agendar Consulta');
+        this.exibir();
+        break;
+        case '2':
+        // Lógica para Cancelar Agendamento
+        console.log('Cancelar Agendamento');
+        this.exibir();
+        break;
+        case '3':
+        // Lógica para Listar Agenda
+        console.log('Listar Agenda');
+        this.exibir();
+        break;
+        case '4':
+        // Lógica para Voltar p/ menu principal
+        console.log('Voltar p/ Menu Principal');
+        this.exibir();
+        break;
+
+        default:
+          console.log('Opção Inválida. Digite uma opção Válida');
+          this.exibirAgenda();
+        break;
+      }
+    });
   }
 }
 
-class Agenda {
-  constructor() {
+//Layout da Listagem - LAYOUT 4 - LISTAGEM DOS PACIENTES ORDENADO POR CPF
+
+//Layout da Listagem - LAYOUT 4 - LISTAGEM DOS PACIENTES ORDENADO POR NOME
+
+
+  class Agenda {
+    constructor() {
     this.pacientes = [];
   }
 
@@ -88,8 +163,6 @@ class Agenda {
     }
   }
 } 
-
+  
 const menu = new Menu();
 menu.exibir();
-
-
