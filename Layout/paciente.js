@@ -6,6 +6,8 @@ export default class Paciente{
         this.dataNascimento = dataNascimento;
     }
 
+    
+    
     validarCPF(){
         const cpfDigits = this.cpf.replace(/[^\d]/g, ''); // Remover caracteres não numéricos do CPF
 
