@@ -5,6 +5,7 @@ import Paciente from './Layout/paciente.js'
 import PromptSync from 'prompt-sync';
 
 import readline from 'readline';
+import { Agenda } from './Agenda.js';
 
 //const prompt = require('prompt-sync')({ sigint: true }); // Permite terminar o programa com CTRL-C
 //let nome = prompt('Digite seu nome'); 
@@ -129,40 +130,5 @@ class Menu {
   }
 }
 
-//Layout da Listagem - LAYOUT 4 - LISTAGEM DOS PACIENTES ORDENADO POR CPF
-
-//Layout da Listagem - LAYOUT 4 - LISTAGEM DOS PACIENTES ORDENADO POR NOME
-
-
-  class Agenda {
-    constructor() {
-    this.pacientes = [];
-  }
-
-  adicionarPaciente(callback) {
-    const rl = readline.createInterface({
-      input: process.stdin,
-      output: process.stdout
-    });
-
-    rl.question('Digite o CPF do Paciente: ', (cpf) => {
-      // Implementação da lógica de cadastro de pacientes
-      // ...
-      rl.close();
-      callback();
-    });
-  }
-
-  exibir() {
-    console.log('--- Lista de Pacientes ---');
-    for (const paciente of this.pacientes) {
-      console.log(`CPF: ${paciente.cpf}`);
-      console.log(`Nome: ${paciente.nome}`);
-      console.log(`Data de Nascimento: ${paciente.dataNascimento}`);
-      console.log('---');
-    }
-  }
-} 
-  
 const menu = new Menu();
 menu.exibir();
