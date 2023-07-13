@@ -189,7 +189,7 @@ export class Agenda {
 
     this.pacientes.push(paciente);
 
-    console.log('Paciente cadastrado com sucesso.');
+    //console.log('Paciente cadastrado com sucesso.');
   }
 
   // Método para obter um paciente pelo CPF

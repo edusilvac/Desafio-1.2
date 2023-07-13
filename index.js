@@ -1,5 +1,5 @@
-import readline from 'readline';
-import Menu from './menu';
+/*(import readline from 'readline';
+import Menu from './menu.js';
 
 const pacientes = []; // Array para armazenar os pacientes cadastrados
 
@@ -9,4 +9,4 @@ const rl = readline.createInterface({
 });
 
 const menu = new Menu(pacientes, rl);
-menu.exibirMenuPrincipal();
+menu.exibirMenuPrincipal(); */
