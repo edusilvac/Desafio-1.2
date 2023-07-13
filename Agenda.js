@@ -1,4 +1,4 @@
-import PromptSync from 'prompt-sync';
+import readline from 'readline';
 
 export class Agenda {
   constructor() {
