@@ -75,8 +75,16 @@ export default class Paciente{
             return false; //Mês futuro Inválido
         }
 
-        if (ano === anoAtual && mes === mesAtual && dia > diasAtual){
+        if (ano === anoAtual && mes === mesAtual && dia > diaAtual){
             return false; //Ano futuro Inválido 
+        }
+
+        // Verificar idade mínima de 13 anos
+        const idadeMinima = 13;
+        const dataNascimentoMaisIdadeMinima = new Date(ano + idadeMinima, mes - 1, dia);
+        if (dataNascimentoMaisIdadeMinima > dataAtual) {
+        console.log('Erro: O paciente deve ter pelo menos 13 anos.');
+        return false; // Idade mínima não atingida
         }
 
         return true;

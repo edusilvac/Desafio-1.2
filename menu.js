@@ -149,7 +149,7 @@ class Menu {
           }
   
           if (!paciente.validarDataNascimento()) {
-            console.log('Data de nascimento inválida. Digite uma data válida.');
+            //console.log('Data de nascimento inválida. Digite uma data válida.');
             this.exibirMenuPrincipal();
             return;
           }
@@ -203,7 +203,7 @@ class Menu {
     this.rl.question('Digite o CPF do paciente: ', (cpf) => {
       const paciente = this.agenda.getPacienteByCPF(cpf);
       if (!paciente) {
-        console.log('CPF do paciente não encontrado.');
+        console.log('Erro: Paciente não cadastrado.');
         this.exibirAgenda();
         return;
       }

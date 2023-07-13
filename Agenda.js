@@ -15,6 +15,9 @@ export class Agenda {
     return `${dia}/${mes}/${ano}`;
   }
 
+
+  
+
   // Método para listar os pacientes ordenados por CPF
   listarPacientes() {
     // Ordenar os pacientes por CPF
@@ -38,7 +41,11 @@ export class Agenda {
     });
   
     console.log('------------------------------------------------------------');
-  }
+  } 
+  
+
+
+
 
 
 
