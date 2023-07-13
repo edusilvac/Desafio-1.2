@@ -293,7 +293,7 @@ class Menu {
   excluirPaciente() {
     console.log('--- Excluir Paciente ---');
   
-    this.prompt.question('Digite o CPF do paciente a ser excluído: ', (cpf) => {
+    this.prompt('Digite o CPF do paciente a ser excluído: ', (cpf) => {
       // Procurar o paciente pelo CPF no array de pacientes da instância da classe Agenda
       const pacienteIndex = this.agenda.pacientes.findIndex((paciente) => paciente.cpf === cpf);
   
@@ -333,7 +333,7 @@ class Menu {
     console.log('2 - Agenda');
     console.log('3 - Fim');
 
-    this.prompt.question('Digite a opção desejada: ', (opcao) => {
+    this.prompt('Digite a opção desejada: ', (opcao) => {
       switch (opcao) {
         case '1':
           this.cadastrarPaciente();
@@ -362,7 +362,7 @@ class Menu {
     console.log('4 - Listar Pacientes (Ordenado por Nome)');
     console.log('5 - Voltar para o menu principal');
 
-    this.prompt.question('Digite a opção desejada: ', (opcao) => {
+    this.prompt('Digite a opção desejada: ', (opcao) => {
       switch (opcao) {
         case '1':
           // Lógica para cadastrar novo Paciente
@@ -402,9 +402,9 @@ class Menu {
   cadastrarNovoPaciente() {
     console.log('--- Cadastrar Novo Paciente ---');
 
-    this.prompt.question('Digite o CPF: ', (cpf) => {
-      this.prompt.question('Digite o nome: ', (nome) => {
-        this.prompt.question('Digite a data de nascimento (DD/MM/AAAA): ', (dataNascimento) => {
+    this.prompt('Digite o CPF: ', (cpf) => {
+      this.prompt('Digite o nome: ', (nome) => {
+        this.prompt('Digite a data de nascimento (DD/MM/AAAA): ', (dataNascimento) => {
           // Criar uma instância da classe Paciente
           const paciente = new Paciente(cpf, nome, dataNascimento);
   
@@ -442,7 +442,7 @@ class Menu {
     console.log('3 - Listar Agenda');
     console.log('4 - Voltar para o menu principal');
 
-    this.prompt.question('Digite a opção desejada: ', (opcao) => {
+    this.prompt('Digite a opção desejada: ', (opcao) => {
       switch (opcao) {
         case '1':
           this.agendarConsulta();
@@ -467,16 +467,16 @@ class Menu {
   //Agendar Consulta
   agendarConsulta() {
     console.log('--- Agendar Consulta ---');
-    this.prompt.question('Digite o CPF do paciente: ', (cpf) => {
+    this.prompt('Digite o CPF do paciente: ', (cpf) => {
       const paciente = this.agenda.getPacienteByCPF(cpf);
       if (!paciente) {
         console.log('Erro: Paciente não cadastrado.');
         this.exibirAgenda();
         return;
       }
-      this.prompt.question('Digite a data da consulta (DD/MM/AAAA): ', (dataConsulta) => {
-        this.prompt.question('Digite a hora inicial (HHMM): ', (horaInicial) => {
-          this.prompt.question('Digite a hora final (HHMM): ', (horaFinal) => {
+      this.prompt('Digite a data da consulta (DD/MM/AAAA): ', (dataConsulta) => {
+        this.prompt('Digite a hora inicial (HHMM): ', (horaInicial) => {
+          this.prompt('Digite a hora final (HHMM): ', (horaFinal) => {
             this.agenda.agendarConsulta(cpf, dataConsulta, horaInicial, horaFinal);
             this.exibirAgenda();
           });
@@ -488,14 +488,14 @@ class Menu {
   // Cancelar Agendamento
   cancelarAgendamento() {
   console.log('--- Cancelar Agendamento ---');
-  this.prompt.question('Digite o CPF do paciente: ', (cpf) => {
+  this.prompt('Digite o CPF do paciente: ', (cpf) => {
     const paciente = this.agenda.getPacienteByCPF(cpf);
     if (!paciente) {
       console.log('CPF do paciente não encontrado.');
       this.exibirAgenda();
       return;
     }
-    this.prompt.question('Digite a data da consulta (DD/MM/AAAA): ', (dataConsulta) => {
+    this.prompt('Digite a data da consulta (DD/MM/AAAA): ', (dataConsulta) => {
       const [dia, mes, ano] = dataConsulta.split('/');
       const dataConsultaObj = new Date(ano, mes - 1, dia);
 
